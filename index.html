@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IV Encontro Baiano de Ciência, Tecnologia e Inovação | AUI · UNEB</title>
+<meta name="description" content="Rede que Conecta, Território que Transforma. 20 a 22 de julho de 2026, Salvador-BA. O maior fórum de ciência, tecnologia e inovação da Bahia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --azul-noturno:#1B2E4E;
+    --azul-noturno-2:#142238;
+    --verde-bahia:#3AAB4A;
+    --verde-bahia-escuro:#2E8A3B;
+    --ouro-inovacao:#F5A623;
+    --laranja-acao:#E87722;
+    --laranja-acao-escuro:#C8611A;
+    --cinza-texto:#3D3D3D;
+    --cinza-fundo:#F4F4F4;
+    --branco:#FFFFFF;
+    --font-display:'Montserrat', sans-serif;
+    --font-corpo:'Inter', sans-serif;
+    --container:1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--font-corpo);color:var(--cinza-texto);background:var(--branco);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:var(--container);margin:0 auto;padding:0 24px;}
+  h1,h2,h3{font-family:var(--font-display);}
+  button:focus-visible,a:focus-visible{outline:3px solid var(--ouro-inovacao);outline-offset:2px;}
+
+  /* ===== HEADER ===== */
+  .site-header{
+    position:sticky;top:0;z-index:100;
+    background:var(--azul-noturno);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .site-header .container{
+    display:flex;align-items:center;justify-content:space-between;
+    height:72px;
+  }
+  .logo-aui{
+    display:flex;align-items:center;gap:10px;
+    font-family:var(--font-display);font-weight:700;color:var(--branco);font-size:15px;
+    letter-spacing:.02em;
+  }
+  .logo-aui .mark{
+    width:34px;height:34px;border-radius:8px;
+    background:linear-gradient(135deg,var(--verde-bahia),var(--ouro-inovacao));
+    display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:var(--azul-noturno);
+    flex-shrink:0;
+  }
+  .nav-principal{display:flex;gap:28px;align-items:center;}
+  .nav-principal a{
+    color:var(--branco);font-size:14px;font-weight:600;font-family:var(--font-display);
+    opacity:.85;transition:opacity .2s, color .2s;
+  }
+  .nav-principal a:hover{opacity:1;color:var(--verde-bahia);}
+  .btn-sticky{
+    background:var(--laranja-acao);color:var(--branco)!important;
+    padding:10px 22px;border-radius:6px;font-weight:700;font-size:14px;
+    font-family:var(--font-display);transition:background .2s;
+    white-space:nowrap;
+  }
+  .btn-sticky:hover{background:var(--laranja-acao-escuro);}
+  .nav-toggle{display:none;background:none;border:none;color:var(--branco);font-size:26px;cursor:pointer;}
+
+  @media (max-width:860px){
+    .nav-principal{display:none;}
+    .nav-toggle{display:block;}
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    background:var(--azul-noturno);
+    color:var(--branco);
+    overflow:hidden;
+    padding:88px 0 96px;
+  }
+    .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(rgba(27,46,78,.78), rgba(27,46,78,.82)),
+        url("https://inovacao.uneb.br/wp-content/uploads/2026/06/IV-SEMINARIO-1.png");
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+
+    opacity:1;
+}
+  .hero-content{position:relative;z-index:2;max-width:680px;}
+  .hero-eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.12em;
+    color:var(--verde-bahia);text-transform:uppercase;margin-bottom:18px;
+  }
+  .hero-eyebrow::before{content:"";width:24px;height:2px;background:var(--verde-bahia);}
+  .hero h1{
+    font-size:clamp(34px,5.6vw,64px);font-weight:800;text-transform:uppercase;
+    line-height:1.06;letter-spacing:-.01em;
+  }
+  .hero h1 .accent{color:var(--verde-bahia);}
+  .hero-tagline{
+    margin-top:22px;font-family:var(--font-display);font-weight:700;font-size:clamp(19px,2.4vw,26px);
+    color:var(--branco);max-width:520px;
+  }
+  .hero-meta{
+    margin-top:26px;display:flex;flex-wrap:wrap;gap:28px;align-items:center;
+  }
+  .hero-meta-item{display:flex;align-items:center;gap:10px;}
+  .hero-meta-item svg{flex-shrink:0;}
+  .hero-meta-item span{font-weight:700;color:var(--ouro-inovacao);font-size:16px;}
+  .hero-meta-item small{display:block;font-weight:400;color:rgba(255,255,255,.65);font-size:12.5px;}
+  .hero-cta-row{margin-top:38px;display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-primario{
+    background:var(--laranja-acao);color:var(--branco);
+    padding:16px 34px;border-radius:7px;font-family:var(--font-display);
+    font-weight:700;font-size:15.5px;letter-spacing:.02em;
+    box-shadow:0 8px 24px rgba(232,119,34,.32);
+    transition:transform .2s, background .2s;
+    display:inline-flex;align-items:center;gap:10px;
+  }
+  .btn-primario:hover{background:var(--laranja-acao-escuro);transform:translateY(-2px);}
+  .btn-secundario{
+    border:1.5px solid rgba(255,255,255,.35);color:var(--branco);
+    padding:16px 30px;border-radius:7px;font-family:var(--font-display);
+    font-weight:600;font-size:15px;transition:border-color .2s, background .2s;
+  }
+  .btn-secundario:hover{border-color:var(--verde-bahia);background:rgba(58,171,74,.1);}
+
+  /* ===== SOBRE ===== */
+  .sobre{background:var(--branco);padding:96px 0;}
+  .sobre-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:start;}
+  .section-eyebrow{
+    font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.12em;
+    color:var(--verde-bahia-escuro);text-transform:uppercase;margin-bottom:14px;display:block;
+  }
+  .sobre h2{font-size:clamp(26px,3.2vw,36px);font-weight:700;color:var(--azul-noturno);margin-bottom:22px;line-height:1.2;}
+  .sobre p{font-size:16.5px;color:var(--cinza-texto);max-width:560px;}
+  .numeros-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px 24px;}
+  .numero-card{border-left:3px solid var(--verde-bahia);padding-left:18px;}
+  .numero-card .num{font-family:var(--font-display);font-weight:800;font-size:42px;color:var(--ouro-inovacao);line-height:1;}
+  .numero-card .label{font-size:13.5px;color:var(--cinza-texto);margin-top:6px;font-weight:600;}
+  @media (max-width:860px){.sobre-grid{grid-template-columns:1fr;gap:44px;}}
+
+  /* ===== MESAS ===== */
+  .mesas{background:var(--cinza-fundo);padding:96px 0;}
+  .mesas-header{max-width:620px;margin-bottom:56px;}
+  .mesas-header h2{font-size:clamp(26px,3.2vw,36px);font-weight:700;color:var(--azul-noturno);}
+  .mesa-card{
+    background:var(--branco);border-radius:10px;padding:32px 36px;margin-bottom:24px;
+    box-shadow:0 2px 18px rgba(27,46,78,.06);
+  }
+  .mesa-top{display:flex;align-items:flex-start;gap:18px;flex-wrap:wrap;margin-bottom:22px;}
+  .badge-mesa{
+    background:var(--laranja-acao);color:var(--branco);font-family:var(--font-display);
+    font-weight:800;font-size:12.5px;letter-spacing:.1em;padding:7px 16px;border-radius:4px;
+    text-transform:uppercase;flex-shrink:0;
+  }
+  .mesa-info h3{font-size:21px;font-weight:700;color:var(--azul-noturno);margin-bottom:6px;}
+  .mesa-info .escopo{color:var(--verde-bahia-escuro);font-size:14px;font-weight:500;}
+  .participantes-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:22px;
+  }
+  .participante-card{position:relative;text-align:center;}
+  .participante-foto{
+    width:100%;aspect-ratio:1/1;border-radius:8px;overflow:hidden;
+    background:linear-gradient(135deg,var(--azul-noturno),#2d4870);
+    display:flex;align-items:center;justify-content:center;
+    color:rgba(255,255,255,.5);font-family:var(--font-display);font-weight:700;font-size:28px;
+    position:relative;cursor:default;
+  }
+  .participante-foto .bio-overlay{
+    position:absolute;inset:0;background:rgba(27,46,78,.92);color:var(--branco);
+    display:flex;align-items:center;justify-content:center;padding:14px;font-size:12px;
+    opacity:0;transition:opacity .25s;text-align:left;line-height:1.5;font-family:var(--font-corpo);
+  }
+  .participante-card:hover .bio-overlay,.participante-card:focus-within .bio-overlay{opacity:1;}
+  .participante-nome{font-family:var(--font-display);font-weight:700;font-size:15px;color:var(--azul-noturno);margin-top:14px;}
+  .participante-funcao{
+    font-size:11.5px;font-weight:700;color:var(--verde-bahia-escuro);letter-spacing:.1em;
+    text-transform:uppercase;margin-top:4px;
+  }
+  .participante-instituicao{font-size:12.5px;color:#6b6b6b;margin-top:2px;}
+  @media (max-width:860px){.participantes-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:480px){.participantes-grid{grid-template-columns:1fr 1fr;gap:14px;}}
+
+  /* ===== EIXOS ===== */
+  .eixos{background:var(--azul-noturno);padding:64px 0;}
+  .eixos-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;text-align:center;}
+  .eixo-item svg{margin:0 auto 14px;display:block;}
+  .eixo-item span{
+    display:block;color:var(--branco);font-family:var(--font-display);font-weight:600;
+    font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;
+  }
+  @media (max-width:860px){.eixos-grid{grid-template-columns:repeat(2,1fr);gap:32px;}}
+
+  /* ===== PROGRAMAÇÃO ===== */
+  .programacao{background:var(--branco);padding:96px 0;}
+  .programacao h2{font-size:clamp(26px,3.2vw,36px);font-weight:700;color:var(--azul-noturno);margin-bottom:36px;}
+  .tabs{display:flex;gap:10px;border-bottom:2px solid var(--cinza-fundo);margin-bottom:36px;flex-wrap:wrap;}
+  .tab-btn{
+    background:none;border:none;padding:14px 24px;font-family:var(--font-display);
+    font-weight:700;font-size:14.5px;color:#8a8a8a;cursor:pointer;position:relative;
+    border-bottom:3px solid transparent;transition:color .2s;
+  }
+  .tab-btn.ativo{color:var(--verde-bahia-escuro);border-bottom-color:var(--verde-bahia);}
+  .tab-panel{display:none;}
+  .tab-panel.ativo{display:block;}
+  .atividade{
+    display:grid;grid-template-columns:90px 1fr;gap:20px;padding:18px 0;
+    border-bottom:1px solid var(--cinza-fundo);
+  }
+  .atividade.destaque{border-left:3px solid var(--verde-bahia);padding-left:18px;}
+  .atividade.destaque.laranja{border-left-color:var(--laranja-acao);}
+  .atividade-hora{color:var(--ouro-inovacao);font-weight:700;font-family:var(--font-display);font-size:14.5px;}
+  .atividade-nome{font-weight:700;color:var(--azul-noturno);font-size:15.5px;}
+  .atividade-local{color:#7a7a7a;font-size:13px;margin-top:3px;}
+
+  /* ===== APOIADORES ===== */
+  .apoiadores{background:var(--cinza-fundo);padding:72px 0;}
+  .apoiadores h2{
+    text-align:center;font-size:13px;font-family:var(--font-display);font-weight:700;
+    letter-spacing:.12em;text-transform:uppercase;color:#7a7a7a;margin-bottom:40px;
+  }
+  .apoio-grupo{margin-bottom:36px;}
+  .apoio-grupo-label{
+    text-align:center;font-size:12px;font-weight:700;color:var(--azul-noturno);
+    letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;
+  }
+  .logos-row{display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap;}
+  .logo-placeholder{
+    height:48px;min-width:120px;display:flex;align-items:center;justify-content:center;
+    color:#9a9a9a;font-size:12px;font-weight:600;font-family:var(--font-display);
+    background:var(--branco);border-radius:6px;padding:0 20px;border:1px dashed #d4d4d4;
+  }
+
+  /* ===== CTA FINAL ===== */
+  .cta-final{
+    background:linear-gradient(135deg,var(--azul-noturno),var(--azul-noturno-2));
+    padding:80px 0;text-align:center;color:var(--branco);
+  }
+  .cta-final h2{font-size:clamp(24px,3.4vw,34px);font-weight:700;max-width:680px;margin:0 auto 30px;line-height:1.3;}
+
+  /* ===== FOOTER ===== */
+  .site-footer{background:var(--azul-noturno-2);color:rgba(255,255,255,.7);padding:40px 0;font-size:13.5px;}
+  .footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:center;}
+
+  .skip-link{position:absolute;left:-999px;}
+  .skip-link:focus{left:12px;top:12px;background:#fff;color:#000;padding:8px 14px;border-radius:4px;z-index:200;}
+
+  @media (max-width:600px){
+    .hero{padding:64px 0 72px;}
+    .sobre,.mesas,.programacao{padding:64px 0;}
+    .numeros-grid{grid-template-columns:1fr 1fr;}
+    .mesa-card{padding:24px 20px;}
+  }
+</style>
+</head>
+<body>
+<a href="#conteudo" class="skip-link">Ir para o conteúdo</a>
+
+<header class="site-header">
+  <div class="container">
+    <a href="#" class="logo-aui"><span class="mark">AUI</span> Agência UNEB de Inovação</a>
+    <nav class="nav-principal" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#mesas">Mesas</a>
+      <a href="#programacao">Programação</a>
+      <a href="#apoiadores">Realizadores</a>
+      <a href="#inscricao" class="btn-sticky">Inscreva-se</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Abrir menu">☰</button>
+  </div>
+</header>
+
+<main id="conteudo">
+  <section class="hero">
+    <div class="container hero-content">
+      <span class="hero-eyebrow">CT&amp;I · Ciência, Tecnologia e Inovação</span>
+      <h1>IV Encontro <span class="accent">Baiano</span> de Ciência, Tecnologia e Inovação</h1>
+      <p class="hero-tagline">“Rede que Conecta, Território que Transforma”</p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
+          <div><span>20 a 22 de julho de 2026</span><small>Três dias de programação</small></div>
+        </div>
+        <div class="hero-meta-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <div><span>Salvador – BA</span><small>Instituto Anísio Teixeira (IAT)</small></div>
+        </div>
+      </div>
+      <div class="hero-cta-row">
+        <a href="https://sge.uneb.br/inicio/detalhe/6881?sigla=EBACTI2026&nome=IV+Encontro+Baiano+de+Ci%C3%AAncia%2C+Tecnologia+e+Inova%C3%A7%C3%A3o+%26+IV+Semin%C3%A1rio+de+Inova%C3%A7%C3%A3o+UNEB&tipo=1" class="btn-primario">Inscreva-se agora →</a>
+        <a href="#programacao" class="btn-secundario">Ver programação</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sobre" id="sobre">
+    <div class="container sobre-grid">
+      <div>
+        <span class="section-eyebrow">Sobre o evento</span>
+        <h2>IV Edição do Encontro Baiano de Ciência, Tecnologia e Inovação</h2>
+        <p>A IV edição do Encontro Baiano de Ciência, Tecnologia e Inovação insere-se em um contexto de transformações científicas, tecnológicas, ambientais e sociais que demandam novas articulações entre produção do conhecimento, cooperação institucional e desenvolvimento territorial. Diante da ampliação das redes globais e das disputas em torno dos modelos contemporâneos de desenvolvimento, torna-se estratégico fortalecer espaços voltados à circulação de saberes, à internacionalização e à construção coletiva de agendas de Ciência, Tecnologia e Inovação (CT&I).</p>
+      </div>
+      <div class="numeros-grid">
+        <div class="numero-card"><div class="num">3</div><div class="label">Dias de evento</div></div>
+        <div class="numero-card"><div class="num">5</div><div class="label">Mesas temáticas</div></div>
+        <div class="numero-card"><div class="num">15+</div><div class="label">Palestrantes</div></div>
+        <div class="numero-card"><div class="num">4</div><div class="label">Instituições parceiras</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mesas" id="mesas">
+    <div class="container">
+      <div class="mesas-header">
+        <span class="section-eyebrow">Conteúdo</span>
+        <h2>Mesas Temáticas</h2>
+      </div>
+
+      <div class="mesa-card">
+        <div class="mesa-top">
+          <span class="badge-mesa">Mesa</span>
+          <div class="mesa-info">
+            <h3>Mesa Internacional I – Brasil–Moçambique</h3>
+            <p class="escopo">Tecnociência, tecnologias sociais e epistemes afrodiásporicas</p>
+          </div>
+        </div>
+        <div class="participantes-grid">
+          <div class="participante-card" tabindex="0">
+            <div class="participante-foto">SM
+              <div class="bio-overlay">Coordenadora da Agência UNEB de Inovação (AUI).</div>
+            </div>
+            <div class="participante-nome">Suely Messeder</div>
+            <div class="participante-funcao">Mediadora</div>
+            <div class="participante-instituicao">UNEB</div>
+        </div>
+        <div class="participante-card" tabindex="0">
+          <div class="participante-foto">SM
+            <div class="bio-overlay">Pesquisadora com foco em políticas públicas de ciência e tecnologia.</div>
+          </div>
+          <div class="participante-nome">Sandra Manuel</div>
+          <div class="participante-funcao">Palestrante</div>
+          <div class="participante-instituicao">UEM</div>
+        </div>
+          <div class="participante-card" tabindex="0">
+            <div class="participante-foto">IM
+              <div class="bio-overlay">Representante do Ministério das Comunicações e Transformação Digital da República de Moçambique.</div>
+            </div>
+            <div class="participante-nome">Ivone Muocha</div>
+            <div class="participante-funcao">Palestrante</div>
+            <div class="participante-instituicao">MCTD – Moçambique</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mesa-card">
+        <div class="mesa-top">
+          <span class="badge-mesa">Mesa</span>
+          <div class="mesa-info">
+            <h3>História das Redes Nacionais</h3>
+            <p class="escopo"></p>
+          </div>
+        </div>
+        <div class="participantes-grid">
+          <div class="participante-card" tabindex="0">
+            <div class="participante-foto">PN<div class="bio-overlay">Universidade Federal do ABC (SP/Brasil).</div></div>
+            <div class="participante-nome">Paulo Neves</div>
+            <div class="participante-funcao">Palestrante</div>
+            <div class="participante-instituicao">UFABC</div>
+          </div>
+          <div class="participante-card" tabindex="0">
+            <div class="participante-foto">KJ<div class="bio-overlay">Laboratório Nacional de Computação Científica (RJ/Brasil).</div></div>
+            <div class="participante-nome">Karan Júnior</div>
+            <div class="participante-funcao">Palestrante</div>
+            <div class="participante-instituicao">LNCC</div>
+          </div>
+          <div class="participante-card" tabindex="0">
+            <div class="participante-foto">AC<div class="bio-overlay">Universidade Federal da Bahia</div></div>
+            <div class="participante-nome">Alcides Caldas</div>
+            <div class="participante-funcao">Palestrante</div>
+            <div class="participante-instituicao">UFBA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="eixos">
+    <div class="container eixos-grid">
+      <div class="eixo-item">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3AAB4A" stroke-width="1.6"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><circle cx="12" cy="18" r="3"/><path d="M9.8 9.8 14.5 17M14.2 9.8 9.5 17M10.8 7.6h2.4"/></svg>
+        <span>Cooperação</span>
+      </div>
+      <div class="eixo-item">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3AAB4A" stroke-width="1.6"><path d="M12 3v4M12 17v4M5 12H3M21 12h-2"/><circle cx="12" cy="12" r="5"/></svg>
+        <span>Conhecimento</span>
+      </div>
+      <div class="eixo-item">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3AAB4A" stroke-width="1.6"><path d="M4 19c4-10 12-10 16 0"/><circle cx="8" cy="8" r="2"/><circle cx="16" cy="8" r="2"/></svg>
+        <span>Diversidade</span>
+      </div>
+      <div class="eixo-item">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3AAB4A" stroke-width="1.6"><path d="M4 18 9 12l4 3 7-9"/><path d="M16 6h4v4"/></svg>
+        <span>Desenvolvimento</span>
+      </div>
+      <div class="eixo-item">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3AAB4A" stroke-width="1.6"><path d="M12 3c4 3 6 6 6 9a6 6 0 0 1-12 0c0-3 2-6 6-9Z"/></svg>
+        <span>Sustentabilidade</span>
+      </div>
+    </div>
+  </section>
+<!-- 
+<section class="programacao" id="programacao">
+    <div class="container">
+      <h2>Programação</h2>
+      <div class="tabs" role="tablist" aria-label="Dias do evento">
+        <button class="tab-btn ativo" role="tab" aria-selected="true" data-tab="dia1">20 de julho</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-tab="dia2">21 de julho</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-tab="dia3">22 de julho</button>
+      </div>
+
+      <div class="tab-panel ativo" id="dia1">
+        <div class="atividade destaque">
+          <div class="atividade-hora">9h00</div>
+          <div><div class="atividade-nome">Cerimônia de abertura</div><div class="atividade-local">Auditório Principal</div></div>
+        </div>
+        <div class="atividade">
+          <div class="atividade-hora">10h00</div>
+          <div><div class="atividade-nome">Mesa: Cooperação Sul–Sul em Ciência e Tecnologia</div><div class="atividade-local">Auditório Principal</div></div>
+        </div>
+        <div class="atividade">
+          <div class="atividade-hora">14h00</div>
+          <div><div class="atividade-nome">Mesa: Inovação Aberta e Ecossistemas Regionais</div><div class="atividade-local">Sala 2</div></div>
+        </div>
+        <div class="atividade destaque laranja">
+          <div class="atividade-hora">16h30</div>
+          <div><div class="atividade-nome">Conferência magna</div><div class="atividade-local">Auditório Principal</div></div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="dia2">
+        <div class="atividade">
+          <div class="atividade-hora">9h00</div>
+          <div><div class="atividade-nome">Painel: Financiamento à pesquisa aplicada</div><div class="atividade-local">Sala 1</div></div>
+        </div>
+        <div class="atividade">
+          <div class="atividade-hora">11h00</div>
+          <div><div class="atividade-nome">Roda de conversa: Mulheres na CT&amp;I baiana</div><div class="atividade-local">Sala 2</div></div>
+        </div>
+        <div class="atividade">
+          <div class="atividade-hora">14h00</div>
+          <div><div class="atividade-nome">Workshop: Transferência de tecnologia universidade-empresa</div><div class="atividade-local">Laboratório AUI</div></div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="dia3">
+        <div class="atividade">
+          <div class="atividade-hora">9h00</div>
+          <div><div class="atividade-nome">Apresentação de cases do Parque Tecnológico da Bahia</div><div class="atividade-local">Auditório Principal</div></div>
+        </div>
+        <div class="atividade destaque">
+          <div class="atividade-hora">16h00</div>
+          <div><div class="atividade-nome">Cerimônia de encerramento</div><div class="atividade-local">Auditório Principal</div></div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="apoiadores" id="apoiadores">
+    <div class="container">
+      <h2>Realização e apoio</h2>
+      <div class="apoio-grupo">
+        <div class="apoio-grupo-label">Realização</div>
+        <div class="logos-row">
+          <div class="logo-placeholder">Agência UNEB de Inovação</div>
+          <div class="logo-placeholder">FAPESB</div>
+          <div class="logo-placeholder">SEI</div>
+          <div class="logo-placeholder">Governo do Estado da Bahia</div>
+        </div>
+      </div>
+      <div class="apoio-grupo">
+        <div class="apoio-grupo-label">Apoio</div>
+        <div class="logos-row">
+          <div class="logo-placeholder">IAT</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final" id="inscricao">
+    <div class="container">
+      <h2>Faça parte do encontro que conecta Bahia e o mundo</h2>
+      <a href="https://sge.uneb.br/inicio/detalhe/6881?sigla=EBACTI2026&nome=IV+Encontro+Baiano+de+Ci%C3%AAncia%2C+Tecnologia+e+Inova%C3%A7%C3%A3o+%26+IV+Semin%C3%A1rio+de+Inova%C3%A7%C3%A3o+UNEB&tipo=1" class="btn-primario">Inscreva-se agora →</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <span>Agência de Inovação UNEB — AUI</span>
+    <span>IV Encontro Baiano de CT&amp;I · 20 a 22 de julho de 2026 · Salvador–BA</span>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.tab-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.tab-btn').forEach(b=>{b.classList.remove('ativo');b.setAttribute('aria-selected','false');});
+      document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('ativo'));
+      btn.classList.add('ativo');
+      btn.setAttribute('aria-selected','true');
+      document.getElementById(btn.dataset.tab).classList.add('ativo');
+    });
+  });
+</script>
+</body>
+</html>
