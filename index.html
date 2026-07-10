@@ -260,6 +260,173 @@
   .site-footer{background:var(--azul-noturno-2);color:rgba(255,255,255,.7);padding:40px 0;font-size:13.5px;}
   .footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:center;}
 
+
+  /* ===== CARDS DE EDIÇÕES ===== */
+  .edicoes{background:var(--cinza-fundo);padding:88px 0;}
+  .edicoes-header{text-align:center;margin-bottom:52px;}
+  .edicoes-header h2{font-size:clamp(26px,3.2vw,36px);font-weight:700;color:var(--azul-noturno);margin-bottom:10px;}
+  .edicoes-header p{color:#6b6b6b;font-size:16px;max-width:520px;margin:0 auto;}
+  .edicoes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .edicao-card{background:var(--branco);border-radius:12px;overflow:hidden;box-shadow:0 2px 20px rgba(27,46,78,.08);display:flex;flex-direction:column;transition:transform .25s, box-shadow .25s;}
+  .edicao-card:hover{transform:translateY(-5px);box-shadow:0 10px 36px rgba(27,46,78,.14);}
+  .edicao-card-capa{height:160px;position:relative;overflow:hidden;display:flex;align-items:flex-end;}
+  .edicao-card-capa img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .edicao-card-capa .capa-overlay{position:absolute;inset:0;}
+  .edicao-card-capa .capa-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+  .edicao-card-capa .capa-placeholder svg{opacity:.18;}
+  .edicao-badge{position:absolute;top:14px;left:14px;font-family:var(--font-display);font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--branco);padding:5px 12px;border-radius:4px;}
+  .edicao-ano{position:absolute;bottom:14px;right:14px;font-family:var(--font-display);font-weight:700;font-size:28px;color:var(--branco);opacity:.9;line-height:1;text-shadow:0 2px 8px rgba(0,0,0,.4);}
+  .edicao-card-body{padding:22px 22px 10px;flex:1;display:flex;flex-direction:column;gap:8px;}
+  .edicao-num{font-family:var(--font-display);font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;}
+  .edicao-card-body h3{font-size:15px;font-weight:700;color:var(--azul-noturno);line-height:1.35;}
+  .edicao-meta{display:flex;flex-direction:column;gap:5px;margin-top:4px;}
+  .edicao-meta-item{display:flex;align-items:center;gap:7px;font-size:12.5px;color:#6b6b6b;}
+  .edicao-meta-item svg{flex-shrink:0;opacity:.55;}
+  .edicao-card-footer{padding:14px 22px 20px;}
+  .edicao-link{display:flex;align-items:center;justify-content:center;gap:7px;font-family:var(--font-display);font-weight:700;font-size:13px;padding:10px 18px;border-radius:6px;border:1.5px solid currentColor;transition:background .2s, color .2s;}
+  .edicao-link:hover{color:var(--branco)!important;}
+  /* cores por edição */
+  .edicao-i .edicao-badge{background:#0552B0;}
+  .edicao-i .capa-overlay{background:linear-gradient(160deg,rgba(5,82,176,.75),rgba(74,53,101,.65));}
+  .edicao-i .edicao-num{color:#0552B0;}
+  .edicao-i .edicao-link{color:#0552B0;border-color:#0552B0;}
+  .edicao-i .edicao-link:hover{background:#0552B0;}
+  .edicao-ii .edicao-badge{background:#890C0C;}
+  .edicao-ii .capa-overlay{background:linear-gradient(160deg,rgba(42,63,99,.75),rgba(75,103,25,.65));}
+  .edicao-ii .edicao-num{color:#4B6719;}
+  .edicao-ii .edicao-link{color:#4B6719;border-color:#4B6719;}
+  .edicao-ii .edicao-link:hover{background:#4B6719;}
+  .edicao-iii .edicao-badge{background:#2C231C;}
+  .edicao-iii .capa-overlay{background:linear-gradient(160deg,rgba(44,35,28,.75),rgba(199,169,67,.55));}
+  .edicao-iii .edicao-num{color:#9C7D2E;}
+  .edicao-iii .edicao-link{color:#9C7D2E;border-color:#9C7D2E;}
+  .edicao-iii .edicao-link:hover{background:#9C7D2E;}
+  .edicao-iv .edicao-badge{background:var(--laranja-acao);}
+  .edicao-iv .capa-overlay{background:linear-gradient(160deg,rgba(27,46,78,.75),rgba(58,171,74,.4));}
+  .edicao-iv .edicao-num{color:var(--laranja-acao);}
+  .edicao-iv .edicao-link{color:var(--laranja-acao);border-color:var(--laranja-acao);}
+  .edicao-iv .edicao-link:hover{background:var(--laranja-acao);}
+  .edicao-iv .edicao-card{border:2px solid var(--laranja-acao);}
+  @media(max-width:960px){.edicoes-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:540px){.edicoes-grid{grid-template-columns:1fr;}.edicoes{padding:64px 0;}}
+
+
+  /* ===== CARDS DE DIVULGAÇÃO ===== */
+  .divulgacao{background:var(--azul-noturno);padding:80px 0;}
+  .divulgacao-header{text-align:center;margin-bottom:44px;}
+  .divulgacao-header h2{font-size:clamp(22px,2.8vw,32px);font-weight:700;color:var(--branco);margin-bottom:8px;}
+  .divulgacao-header p{color:rgba(255,255,255,.6);font-size:15px;}
+  .divulgacao-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+  }
+  .div-card{
+    position:relative;border-radius:10px;overflow:hidden;
+    background:rgba(255,255,255,.06);
+    aspect-ratio:4/5;cursor:pointer;
+  }
+  .div-card.destaque{
+    grid-row:span 2;aspect-ratio:auto;
+  }
+  .div-card img{
+    width:100%;height:100%;object-fit:cover;display:block;
+    transition:transform .4s ease;
+  }
+  .div-card:hover img{transform:scale(1.04);}
+  .div-card .ph{
+    width:100%;height:100%;
+    display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;
+    color:rgba(255,255,255,.18);font-family:var(--font-display);font-size:12px;font-weight:600;
+    letter-spacing:.08em;text-transform:uppercase;
+    border:1.5px dashed rgba(255,255,255,.12);border-radius:10px;
+    position:absolute;inset:0;
+  }
+  .div-card .ph svg{opacity:.2;}
+  @media(max-width:860px){
+    .divulgacao-grid{grid-template-columns:repeat(2,1fr);}
+    .div-card.destaque{grid-row:auto;aspect-ratio:4/5;}
+  }
+  @media(max-width:480px){
+    .divulgacao-grid{grid-template-columns:1fr 1fr;gap:10px;}
+    .divulgacao{padding:56px 0;}
+  }
+
+  /* ===== GALERIA ===== */
+  .galeria{background:var(--branco);padding:96px 0;}
+  .galeria-header{max-width:620px;margin-bottom:48px;}
+  .galeria-header h2{font-size:clamp(26px,3.2vw,36px);font-weight:700;color:var(--azul-noturno);}
+  .galeria-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+  }
+  .galeria-item{
+    position:relative;aspect-ratio:1/1;overflow:hidden;
+    border-radius:8px;cursor:pointer;background:var(--cinza-fundo);
+  }
+  .galeria-item img{
+    width:100%;height:100%;object-fit:cover;
+    transition:transform .35s ease;display:block;
+  }
+  .galeria-item:hover img{transform:scale(1.06);}
+  .galeria-item .overlay-hover{
+    position:absolute;inset:0;
+    background:rgba(0,0,0,.32);
+    display:flex;align-items:center;justify-content:center;
+    opacity:0;transition:opacity .25s;
+  }
+  .galeria-item:hover .overlay-hover{opacity:1;}
+  .overlay-hover svg{color:#fff;}
+  /* placeholder sem foto */
+  .galeria-item.placeholder{
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--font-display);font-size:12px;font-weight:600;
+    color:#aaa;flex-direction:column;gap:8px;border:1.5px dashed #d8d8d8;
+  }
+  .galeria-item.placeholder svg{opacity:.35;}
+
+  /* ── Lightbox ── */
+  .lightbox{
+    display:none;position:fixed;inset:0;z-index:1000;
+    background:rgba(0,0,0,.92);
+    align-items:center;justify-content:center;
+  }
+  .lightbox.aberto{display:flex;}
+  .lightbox-inner{position:relative;max-width:90vw;max-height:90vh;}
+  .lightbox-inner img{
+    max-width:90vw;max-height:85vh;
+    object-fit:contain;border-radius:6px;display:block;
+  }
+  .lightbox-close{
+    position:fixed;top:20px;right:24px;
+    background:none;border:none;color:#fff;font-size:36px;
+    cursor:pointer;line-height:1;opacity:.8;transition:opacity .2s;
+  }
+  .lightbox-close:hover{opacity:1;}
+  .lightbox-nav{
+    position:fixed;top:50%;transform:translateY(-50%);
+    background:rgba(255,255,255,.12);border:none;color:#fff;
+    font-size:28px;width:52px;height:52px;border-radius:50%;
+    cursor:pointer;display:flex;align-items:center;justify-content:center;
+    transition:background .2s;
+  }
+  .lightbox-nav:hover{background:rgba(255,255,255,.25);}
+  .lightbox-prev{left:16px;}
+  .lightbox-next{right:16px;}
+  .lightbox-contador{
+    position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+    color:rgba(255,255,255,.65);font-size:13px;font-family:var(--font-display);
+    font-weight:600;letter-spacing:.06em;
+  }
+  @media(max-width:860px){
+    .galeria-grid{grid-template-columns:repeat(3,1fr);}
+  }
+  @media(max-width:540px){
+    .galeria-grid{grid-template-columns:repeat(2,1fr);gap:8px;}
+    .galeria{padding:64px 0;}
+  }
+
   .skip-link{position:absolute;left:-999px;}
   .skip-link:focus{left:12px;top:12px;background:#fff;color:#000;padding:8px 14px;border-radius:4px;z-index:200;}
 
@@ -279,10 +446,12 @@
     <a href="#" class="logo-aui"><span class="mark">AUI</span> Agência UNEB de Inovação</a>
     <nav class="nav-principal" aria-label="Navegação principal">
       <a href="#sobre">Sobre</a>
+      <a href="#divulgacao">Divulgação</a>
       <a href="#mesas">Mesas</a>
       <a href="#programacao">Programação</a>
+      <a href="#galeria">Galeria</a>
       <a href="#apoiadores">Realizadores</a>
-      <a href="https://sge.uneb.br/inicio/detalhe/6881" class="btn-sticky">Inscreva-se</a>
+      <a href="#inscricao" class="btn-sticky">Inscreva-se</a>
     </nav>
     <button class="nav-toggle" aria-label="Abrir menu">☰</button>
   </div>
@@ -307,6 +476,83 @@
       <div class="hero-cta-row">
         <a href="https://sge.uneb.br/inicio/detalhe/6881?sigla=EBACTI2026&nome=IV+Encontro+Baiano+de+Ci%C3%AAncia%2C+Tecnologia+e+Inova%C3%A7%C3%A3o+%26+IV+Semin%C3%A1rio+de+Inova%C3%A7%C3%A3o+UNEB&tipo=1" class="btn-primario">Inscreva-se agora →</a>
         <a href="#programacao" class="btn-secundario">Ver programação</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="divulgacao" id="divulgacao">
+    <div class="container">
+      <div class="divulgacao-header">
+        <span class="section-eyebrow" style="color:var(--verde-bahia)">IV Encontro Baiano de CT&amp;I · 2026</span>
+        <h2>Fotos de Divulgação</h2>
+        <p>Imagens oficiais do evento — salve e compartilhe.</p>
+      </div>
+      <div class="divulgacao-grid">
+
+        <div class="div-card destaque">
+          <img src="imagens/hero1.png" alt="IV Encontro Baiano de CT&I 2026" onerror="this.style.display='none'">
+          <div class="ph">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            card-01.jpg
+          </div>
+        </div>
+
+        <div class="div-card">
+          <img src="imagens/progamacao.png" alt="IV Encontro Baiano de CT&I 2026" onerror="this.style.display='none'">
+          <div class="ph">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            card-02.jpg
+          </div>
+        </div>
+
+        <div class="div-card">
+          <img src="imagens/programacao1.png" alt="IV Encontro Baiano de CT&I 2026" onerror="this.style.display='none'">
+          <div class="ph">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            card-03.jpg
+          </div>
+        </div>
+
+        <div class="div-card">
+          <img src="imagens/programacao2.png" alt="IV Encontro Baiano de CT&I 2026" onerror="this.style.display='none'">
+          <div class="ph">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            card-04.jpg
+          </div>
+        </div>
+<!-- 
+        <div class="div-card">
+          <img src="img/divulgacao/card-05.jpg" alt="IV Encontro Baiano de CT&I 2026" onerror="this.style.display='none'">
+          <div class="ph">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            card-05.jpg
+          </div>
+        </div>
+
+        <div class="div-card destaque">
+          <img src="img/divulgacao/card-06.jpg" alt="IV Encontro Baiano de CT&I 2026" onerror="this.style.display='none'">
+          <div class="ph">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            card-06.jpg
+          </div>
+        </div>
+
+        <div class="div-card">
+          <img src="img/divulgacao/card-07.jpg" alt="IV Encontro Baiano de CT&I 2026" onerror="this.style.display='none'">
+          <div class="ph">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            card-07.jpg
+          </div>
+        </div>
+
+        <div class="div-card">
+          <img src="img/divulgacao/card-08.jpg" alt="IV Encontro Baiano de CT&I 2026" onerror="this.style.display='none'">
+          <div class="ph">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            card-08.jpg
+          </div>
+        </div>
+      -->
       </div>
     </div>
   </section>
@@ -554,12 +800,83 @@
           <div><div class="atividade-nome">Plenária Final</div><div class="atividade-local">Construção de agenda estratégica de CT&I para a Bahia</div></div>
         </div>
         <div class="atividade destaque">
-          <div class="atividade-hora"></div>
+          <div class="atividade-hora">16h00</div>
           <div><div class="atividade-nome">Encerramento Cultural</div><div class="atividade-local"></div></div>
         </div>
       </div>
     </div>
   </section>
+
+  <!---
+  <section class="galeria" id="galeria">
+    <div class="container">
+      <div class="galeria-header">
+        <span class="section-eyebrow">Memória</span>
+        <h2>Galeria de Fotos</h2>
+      </div>
+      <div class="galeria-grid" id="galeriaGrid">
+      <div class="galeria-item placeholder" data-src="img/galeria/foto-01.jpg" tabindex="0" role="button" aria-label="Abrir foto 1">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <span>foto-01.jpg</span>
+      </div>
+      <div class="galeria-item placeholder" data-src="img/galeria/foto-02.jpg" tabindex="0" role="button" aria-label="Abrir foto 2">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <span>foto-02.jpg</span>
+      </div>
+      <div class="galeria-item placeholder" data-src="img/galeria/foto-03.jpg" tabindex="0" role="button" aria-label="Abrir foto 3">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <span>foto-03.jpg</span>
+      </div>
+      <div class="galeria-item placeholder" data-src="img/galeria/foto-04.jpg" tabindex="0" role="button" aria-label="Abrir foto 4">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <span>foto-04.jpg</span>
+      </div>
+      <div class="galeria-item placeholder" data-src="img/galeria/foto-05.jpg" tabindex="0" role="button" aria-label="Abrir foto 5">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <span>foto-05.jpg</span>
+      </div>
+      <div class="galeria-item placeholder" data-src="img/galeria/foto-06.jpg" tabindex="0" role="button" aria-label="Abrir foto 6">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <span>foto-06.jpg</span>
+      </div>
+      <div class="galeria-item placeholder" data-src="img/galeria/foto-07.jpg" tabindex="0" role="button" aria-label="Abrir foto 7">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <span>foto-07.jpg</span>
+      </div>
+      <div class="galeria-item placeholder" data-src="img/galeria/foto-08.jpg" tabindex="0" role="button" aria-label="Abrir foto 8">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <span>foto-08.jpg</span>
+      </div>
+      <div class="galeria-item placeholder" data-src="img/galeria/foto-09.jpg" tabindex="0" role="button" aria-label="Abrir foto 9">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <span>foto-09.jpg</span>
+      </div>
+      <div class="galeria-item placeholder" data-src="img/galeria/foto-10.jpg" tabindex="0" role="button" aria-label="Abrir foto 10">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <span>foto-10.jpg</span>
+      </div>
+      <div class="galeria-item placeholder" data-src="img/galeria/foto-11.jpg" tabindex="0" role="button" aria-label="Abrir foto 11">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <span>foto-11.jpg</span>
+      </div>
+      <div class="galeria-item placeholder" data-src="img/galeria/foto-12.jpg" tabindex="0" role="button" aria-label="Abrir foto 12">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <span>foto-12.jpg</span>
+      </div>
+      </div>
+    </div>
+  </section>
+    -->
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizar foto">
+    <button class="lightbox-close" id="lbClose" aria-label="Fechar">&#x2715;</button>
+    <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Foto anterior">&#8249;</button>
+    <div class="lightbox-inner">
+      <img id="lbImg" src="" alt="Foto do evento">
+    </div>
+    <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Próxima foto">&#8250;</button>
+    <div class="lightbox-contador" id="lbContador"></div>
+  </div>
 
   <section class="apoiadores" id="apoiadores">
     <div class="container">
@@ -607,6 +924,69 @@
       document.getElementById(btn.dataset.tab).classList.add('ativo');
     });
   });
+
+  // ── Galeria + Lightbox ──
+  (function(){
+    const grid    = document.getElementById('galeriaGrid');
+    const lb      = document.getElementById('lightbox');
+    const lbImg   = document.getElementById('lbImg');
+    const lbClose = document.getElementById('lbClose');
+    const lbPrev  = document.getElementById('lbPrev');
+    const lbNext  = document.getElementById('lbNext');
+    const lbCont  = document.getElementById('lbContador');
+
+    if(!grid) return;
+
+    const items = Array.from(grid.querySelectorAll('.galeria-item'));
+    let current = 0;
+
+    function open(idx){
+      current = idx;
+      const item = items[idx];
+      const src  = item.dataset.src;
+      const img  = item.querySelector('img');
+      lbImg.src  = img ? img.src : src;
+      lbImg.alt  = img ? (img.alt || 'Foto do evento') : 'Foto do evento';
+      lbCont.textContent = (idx + 1) + ' / ' + items.length;
+      lb.classList.add('aberto');
+      document.body.style.overflow = 'hidden';
+      lbClose.focus();
+    }
+
+    function close(){
+      lb.classList.remove('aberto');
+      document.body.style.overflow = '';
+      items[current].focus();
+    }
+
+    function nav(dir){
+      current = (current + dir + items.length) % items.length;
+      const item = items[current];
+      const img  = item.querySelector('img');
+      lbImg.src  = img ? img.src : item.dataset.src;
+      lbImg.alt  = img ? (img.alt || 'Foto do evento') : 'Foto do evento';
+      lbCont.textContent = (current + 1) + ' / ' + items.length;
+    }
+
+    items.forEach((item, idx) => {
+      item.addEventListener('click', () => open(idx));
+      item.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); open(idx); }});
+    });
+
+    lbClose.addEventListener('click', close);
+    lbPrev.addEventListener('click',  () => nav(-1));
+    lbNext.addEventListener('click',  () => nav(+1));
+
+    lb.addEventListener('click', e => { if(e.target === lb) close(); });
+
+    document.addEventListener('keydown', e => {
+      if(!lb.classList.contains('aberto')) return;
+      if(e.key==='Escape')      close();
+      if(e.key==='ArrowLeft')   nav(-1);
+      if(e.key==='ArrowRight')  nav(+1);
+    });
+  })();
+
 </script>
 </body>
 </html>
