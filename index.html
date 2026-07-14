@@ -180,8 +180,7 @@
   .participante-foto img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center 20%;
+   object-fit: cover;
     position: absolute;
     inset: 0;
   }
@@ -261,49 +260,6 @@
   .site-footer{background:var(--azul-noturno-2);color:rgba(255,255,255,.7);padding:40px 0;font-size:13.5px;}
   .footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:center;}
 
-
-  /* ===== CARDS DE DIVULGAÇÃO ===== */
-  .divulgacao{background:var(--azul-noturno);padding:80px 0;}
-  .divulgacao-header{text-align:center;margin-bottom:44px;}
-  .divulgacao-header h2{font-size:clamp(22px,2.8vw,32px);font-weight:700;color:var(--branco);margin-bottom:8px;}
-  .divulgacao-header p{color:rgba(255,255,255,.6);font-size:15px;}
-  .divulgacao-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
-  .div-card{
-    position:relative;border-radius:10px;overflow:hidden;
-    background:rgba(255,255,255,.07);aspect-ratio:1/1;cursor:pointer;
-  }
-  .div-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease;}
-  .div-card:hover img{transform:scale(1.05);}
-  .div-card .div-overlay{
-    position:absolute;inset:0;background:rgba(0,0,0,.3);
-    display:flex;align-items:center;justify-content:center;
-    opacity:0;transition:opacity .25s;
-  }
-  .div-card:hover .div-overlay,.div-card:focus-within .div-overlay{opacity:1;}
-  .div-overlay svg{color:#fff;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5));}
-  .div-card .ph{
-    position:absolute;inset:0;
-    display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;
-    color:rgba(255,255,255,.18);font-family:var(--font-display);font-size:11px;font-weight:600;
-    letter-spacing:.08em;text-transform:uppercase;
-    border:1.5px dashed rgba(255,255,255,.1);border-radius:10px;
-  }
-  .div-card .ph svg{opacity:.2;}
-  /* lightbox */
-  .div-lightbox{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.95);align-items:center;justify-content:center;}
-  .div-lightbox.aberto{display:flex;}
-  .div-lightbox-inner{position:relative;max-width:90vw;max-height:90vh;}
-  .div-lightbox-inner img{max-width:88vw;max-height:88vh;object-fit:contain;border-radius:6px;display:block;}
-  .div-lb-close{position:fixed;top:18px;right:22px;background:none;border:none;color:#fff;font-size:36px;cursor:pointer;opacity:.8;line-height:1;transition:opacity .2s;}
-  .div-lb-close:hover{opacity:1;}
-  .div-lb-nav{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:none;color:#fff;font-size:28px;width:52px;height:52px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
-  .div-lb-nav:hover{background:rgba(255,255,255,.28);}
-  .div-lb-prev{left:14px;}
-  .div-lb-next{right:14px;}
-  .div-lb-contador{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.55);font-size:13px;font-family:var(--font-display);font-weight:600;letter-spacing:.06em;}
-  @media(max-width:860px){.divulgacao-grid{grid-template-columns:repeat(2,1fr);}}
-  @media(max-width:480px){.divulgacao-grid{grid-template-columns:1fr 1fr;gap:10px;}.divulgacao{padding:56px 0;}}
-
   .skip-link{position:absolute;left:-999px;}
   .skip-link:focus{left:12px;top:12px;background:#fff;color:#000;padding:8px 14px;border-radius:4px;z-index:200;}
 
@@ -323,7 +279,6 @@
     <a href="#" class="logo-aui"><span class="mark">AUI</span> Agência UNEB de Inovação</a>
     <nav class="nav-principal" aria-label="Navegação principal">
       <a href="#sobre">Sobre</a>
-      <a href="#divulgacao">Divulga&ccedil;&atilde;o</a>
       <a href="#mesas">Mesas</a>
       <a href="#programacao">Programação</a>
       <a href="#apoiadores">Realizadores</a>
@@ -356,62 +311,6 @@
     </div>
   </section>
 
-  <section class="divulgacao" id="divulgacao">
-    <div class="container">
-      <div class="divulgacao-header">
-        <span class="section-eyebrow" style="color:var(--verde-bahia)">IV Encontro Baiano de CT&amp;I · 2026</span>
-        <h2>Imagens de Divulga&ccedil;&atilde;o</h2>
-        <p>Imagens oficiais do evento &mdash; clique para ampliar.</p>
-      </div>
-      <div class="divulgacao-grid" id="divGrid">
-        <div class="div-card" data-src="imagens/hero1.png" tabindex="0" role="button" aria-label="Ampliar imagem 1">
-          <img src="imagens/hero1.png" alt="Imagem de divulgação 1 – IV Encontro Baiano de CT&I 2026" onerror="this.style.display='none'">
-          <div class="div-overlay"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg></div>
-          <div class="ph"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
-        </div>
-        <div class="div-card" data-src="imagens/progamacao.png" tabindex="0" role="button" aria-label="Ampliar imagem 2">
-          <img src="imagens/progamacao.png" alt="Imagem de divulgação 2 – IV Encontro Baiano de CT&I 2026" onerror="this.style.display='none'">
-          <div class="div-overlay"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg></div>
-          <div class="ph"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
-        </div>
-        <div class="div-card" data-src="imagens/historiadasredes1.jpeg" tabindex="0" role="button" aria-label="Ampliar imagem 3">
-          <img src="imagens/historiadasredes1.jpeg" alt="Imagem de divulgação 3 – IV Encontro Baiano de CT&I 2026" onerror="this.style.display='none'">
-          <div class="div-overlay"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg></div>
-          <div class="ph"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
-        </div>
-        <div class="div-card" data-src="imagens/brasil-china.jpeg" tabindex="0" role="button" aria-label="Ampliar imagem 2">
-          <img src="imagens/brasil-china.jpeg" alt="Imagem de divulgação 2 – IV Encontro Baiano de CT&I 2026" onerror="this.style.display='none'">
-          <div class="div-overlay"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg></div>
-          <div class="ph"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
-        </div>
-        <div class="div-card" data-src="imagens/historiadasredes.jpeg" tabindex="0" role="button" aria-label="Ampliar imagem 2">
-          <img src="imagens/historiadasredes.jpeg" alt="Imagem de divulgação 2 – IV Encontro Baiano de CT&I 2026" onerror="this.style.display='none'">
-          <div class="div-overlay"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg></div>
-          <div class="ph"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
-        </div>
-        <div class="div-card" data-src="imagens/programacao1.png" tabindex="0" role="button" aria-label="Ampliar imagem 3">
-          <img src="imagens/programacao1.png" alt="Imagem de divulgação 3 – IV Encontro Baiano de CT&I 2026" onerror="this.style.display='none'">
-          <div class="div-overlay"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg></div>
-          <div class="ph"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
-        </div>
-        <div class="div-card" data-src="imagens/programacao2.png" tabindex="0" role="button" aria-label="Ampliar imagem 4">
-          <img src="imagens/programacao2.png" alt="Imagem de divulgação 4 – IV Encontro Baiano de CT&I 2026" onerror="this.style.display='none'">
-          <div class="div-overlay"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg></div>
-          <div class="ph"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Lightbox Divulga&ccedil;&atilde;o -->
-  <div class="div-lightbox" id="divLightbox" role="dialog" aria-modal="true" aria-label="Ampliar imagem">
-    <button class="div-lb-close" id="divLbClose" aria-label="Fechar">&#x2715;</button>
-    <button class="div-lb-nav div-lb-prev" id="divLbPrev" aria-label="Anterior">&#8249;</button>
-    <div class="div-lightbox-inner"><img id="divLbImg" src="" alt=""></div>
-    <button class="div-lb-nav div-lb-next" id="divLbNext" aria-label="Pr&oacute;xima">&#8250;</button>
-    <div class="div-lb-contador" id="divLbCont"></div>
-  </div>
-
   <section class="sobre" id="sobre">
     <div class="container sobre-grid">
       <div>
@@ -421,7 +320,7 @@
       </div>
       <div class="numeros-grid">
         <div class="numero-card"><div class="num">3</div><div class="label">Dias de evento</div></div>
-        <div class="numero-card"><div class="num">5</div><div class="label">Mesas temáticas</div></div>
+        <div class="numero-card"><div class="num">8</div><div class="label">Mesas temáticas</div></div>
         <div class="numero-card"><div class="num">15+</div><div class="label">Palestrantes</div></div>
         <div class="numero-card"><div class="num">4</div><div class="label">Instituições parceiras</div></div>
       </div>
@@ -574,96 +473,97 @@
         </div>
         <div class="atividade">
           <div class="atividade-hora">10h00</div>
-          <div><div class="atividade-nome">Mesa Internacional I – Brasil–Moçambique</div><div class="atividade-local">Sandra Manuel - Universidade Eduardo MondLane (Moçambique)<br>
-            Suely Aldir Messeder - Agência UNEB de Inovação<br>
-            Ivone Muocha - Ministério das Comunicações e Transformação Digital  da República de Moçambique<br>
-            Katia Chavel - Centro de investigação e transferência de tecnologias para o Desenvolvimento Comunitário
-          </div>
-        </div>
+          <div><div class="atividade-nome">Mesa Internacional I – Brasil–Moçambique</div><div class="atividade-local">
+            Sandra Manuel – Universidade Eduardo Mondlane (Moçambique)<br>
+            Suely Aldir Messeder – Agência UNEB de Inovação<br>
+            Ivone Muocha – Ministério das Comunicações e Transformação Digital da República de Moçambique<br>
+            Katia Chavel – Centro de Investigação e Transferência de Tecnologias para o Desenvolvimento Comunitário
+          </div></div>
         </div>
         <div class="atividade">
           <div class="atividade-hora">12h00</div>
-          <div><div class="atividade-nome">Intervalo</div><div class="atividade-local">Almoço<br>
-          </div>
-          </div>
+          <div><div class="atividade-nome">Intervalo</div><div class="atividade-local">Almoço</div></div>
         </div>
         <div class="atividade">
           <div class="atividade-hora">14h00</div>
-          <div><div class="atividade-nome">Mesa I: História das Redes Nacionais</div><div class="atividade-local">Urânia Maia - Universidade do Federal da Bahia<br>
-            Manoel Barral Netto - Academia de Ciências da Bahia<br>
-            Handerson Leite - Fundação de Âmparo à Pesquisa do Estado da Bahia<br>
-            Paulo Neves - Universidade Federal do ABC
-          </div>
+          <div><div class="atividade-nome">Mesa I: História das Redes Nacionais</div><div class="atividade-local">
+            Urânia Maia – Universidade Federal da Bahia<br>
+            Manoel Barral Netto – Academia de Ciências da Bahia<br>
+            Handerson Leite – Fundação de Amparo à Pesquisa do Estado da Bahia<br>
+            Paulo Neves – Universidade Federal do ABC
+          </div></div>
+        </div>
+        <div class="atividade destaque laranja">
+          <div class="atividade-hora">16h00</div>
+          <div><div class="atividade-nome">Mesa SUS: Transformação Digital na Saúde</div><div class="atividade-local">Inovação, gestão do conhecimento e formação para o SUS</div></div>
         </div>
       </div>
-      <div class="atividade destaque laranja">
-        <div class="atividade-hora">16h</div>
-        <div><div class="atividade-nome">Sessão de Apresentação de Projetos</div><div class="atividade-local">Experiências de inovação, startups e spinoffs universitárias</div></div>
-      </div>
-    </div>
-    
-    <div class="tab-panel" id="dia2">
-      <div class="atividade">
-        <div class="atividade-hora">9h00</div>
-        <div><div class="atividade-nome">Mesa Internacional II – Brasil–China</div><div class="atividade-local">Tecnologias emergentes, inovação e desenvolvimento sustentável</div></div>
-      </div>
-      <div class="atividade">
-        <div class="atividade-hora">12h00</div>
-        <div><div class="atividade-nome">Intervalo</div><div class="atividade-local">Almoço<br>
-        </div>
-      </div>
-    </div>
-    <div class="atividade">
-      <div class="atividade-hora">14h00</div>
-      <div><div class="atividade-nome">Mesa II - História das Redes Nacionais</div><div class="atividade-local">Fátima Hanaque - Universidade do Estado da Bahia<br>
-        Suely Messeder - Universidade do Estado da Bahia<br>
-        José Karam - Laboratório Nacional de Computação Científica (RJ/Brasil)<br>
-        Alcides Caldas - Universidade Federal da Bahia
-      </div>
-    </div>
-  </div>
-  <div class="atividade">
-    <div class="atividade-hora">16h00</div>
-    <div><div class="atividade-nome">Grupos de Trabalho</div><div class="atividade-local">Inovação e território<br>
-      Tecnologias sociais<br>
-      Startups e spinoffs<br>
-      Redes de cooperação
-    </div>
-  </div>
-</div>
-</div>
 
-<div class="tab-panel" id="dia3">
-  <div class="atividade">
-    <div class="atividade-hora">9h00</div>
-    <div><div class="atividade-nome">Mesa Internacional III – Brasil–Portugal</div><div class="atividade-local">Felipe Antunes - Universidade de Coimbra (Portugal)<br>
-      Viviane Gomes Almeida - Instituto Nacional da Propriedade Industrial (INPI)
-    </div>
-  </div>
-</div>
-<div class="atividade">
-  <div class="atividade-hora">12h00</div>
-  <div><div class="atividade-nome">Intervalo</div><div class="atividade-local">Almoço<br>
-  </div>
-  </div>
-</div>
-<div class="atividade">
-  <div class="atividade-hora">14h00</div>
-  <div><div class="atividade-nome">Mesa Experiência dos NITs no Brasil na perspectiva ética</div><div class="atividade-local"> Difusão do conhecimento<br>
-    Empreendedorismo universitário<br>
-    Internacionalização<br>
-          Transferência de tecnologia
+      <div class="tab-panel" id="dia2">
+        <div class="atividade">
+          <div class="atividade-hora">9h00</div>
+          <div><div class="atividade-nome">Mesa Internacional II – Brasil–China</div><div class="atividade-local">Tecnologias emergentes, inovação e desenvolvimento sustentável</div></div>
         </div>
+        <div class="atividade">
+          <div class="atividade-hora">10h30</div>
+          <div><div class="atividade-nome">Mesa FINEP</div><div class="atividade-local"></div></div>
         </div>
-      </div>
+        <div class="atividade">
+          <div class="atividade-hora">12h00</div>
+          <div><div class="atividade-nome">Intervalo</div><div class="atividade-local">Almoço</div></div>
+        </div>
+        <div class="atividade">
+          <div class="atividade-hora">14h00</div>
+          <div><div class="atividade-nome">Mesa II – História das Redes Nacionais</div><div class="atividade-local">
+            Fátima Hanaque – Universidade do Estado da Bahia<br>
+            Suely Messeder – Universidade do Estado da Bahia<br>
+            José Karam – Laboratório Nacional de Computação Científica (RJ/Brasil)<br>
+            Alcides Caldas – Universidade Federal da Bahia
+          </div></div>
+        </div>
         <div class="atividade">
           <div class="atividade-hora">16h00</div>
-          <div><div class="atividade-nome">Grupos de Trabalho</div><div class="atividade-local">Inovação e território<br>
-            Tecnologias sociais<br>
-            Startups e spinoffs<br>
-            Redes de cooperação
-          </div>
-          </div>
+          <div><div class="atividade-nome">Proinovação e Empresas Juniores</div><div class="atividade-local"></div></div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="dia3">
+        <div class="atividade">
+          <div class="atividade-hora">9h00</div>
+          <div><div class="atividade-nome">Mesa Internacional III – Brasil–Portugal</div><div class="atividade-local">
+            Felipe Antunes – Universidade de Coimbra (Portugal)<br>
+            Viviane Gomes Almeida – Instituto Nacional da Propriedade Industrial (INPI)
+          </div></div>
+        </div>
+        <div class="atividade">
+          <div class="atividade-hora">12h00</div>
+          <div><div class="atividade-nome">Intervalo</div><div class="atividade-local">Almoço</div></div>
+        </div>
+        <div class="atividade">
+          <div class="atividade-hora">14h00</div>
+          <div><div class="atividade-nome">Mesa: Experiência dos NITs no Brasil na perspectiva ética</div><div class="atividade-local">
+            Difusão do conhecimento<br>
+            Empreendedorismo universitário<br>
+            Internacionalização<br>
+            Transferência de tecnologia
+          </div></div>
+        </div>
+        <div class="atividade">
+          <div class="atividade-hora">16h00</div>
+          <div><div class="atividade-nome">Grupos de Trabalho</div><div class="atividade-local">
+            Inovação e território · Tecnologias sociais · Startups e spinoffs · Redes de cooperação
+          </div></div>
+        </div>
+        <div class="atividade destaque">
+          <div class="atividade-hora">17h00</div>
+          <div><div class="atividade-nome">Plenária Final</div><div class="atividade-local">Construção de agenda estratégica de CT&amp;I para a Bahia</div></div>
+        </div>
+        <div class="atividade destaque laranja">
+          <div class="atividade-hora">18h00</div>
+          <div><div class="atividade-nome">Encerramento Cultural</div><div class="atividade-local"></div></div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -713,32 +613,6 @@
       document.getElementById(btn.dataset.tab).classList.add('ativo');
     });
   });
-
-  // ── Lightbox Divulgação ──
-  (function(){
-    const grid=document.getElementById('divGrid');
-    const lb=document.getElementById('divLightbox');
-    const lbImg=document.getElementById('divLbImg');
-    const lbClose=document.getElementById('divLbClose');
-    const lbPrev=document.getElementById('divLbPrev');
-    const lbNext=document.getElementById('divLbNext');
-    const lbCont=document.getElementById('divLbCont');
-    if(!grid||!lb)return;
-    const cards=Array.from(grid.querySelectorAll('.div-card'));
-    let cur=0;
-    function getSrc(c){const img=c.querySelector('img');return(img&&img.style.display!=='none')?img.src:c.dataset.src;}
-    function getAlt(c){const img=c.querySelector('img');return img?img.alt:'';}
-    function open(i){cur=i;lbImg.src=getSrc(cards[i]);lbImg.alt=getAlt(cards[i]);lbCont.textContent=(i+1)+' / '+cards.length;lb.classList.add('aberto');document.body.style.overflow='hidden';lbClose.focus();}
-    function close(){lb.classList.remove('aberto');document.body.style.overflow='';cards[cur].focus();}
-    function nav(d){cur=(cur+d+cards.length)%cards.length;lbImg.src=getSrc(cards[cur]);lbImg.alt=getAlt(cards[cur]);lbCont.textContent=(cur+1)+' / '+cards.length;}
-    cards.forEach((c,i)=>{c.addEventListener('click',()=>open(i));c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open(i);}});});
-    lbClose.addEventListener('click',close);
-    lbPrev.addEventListener('click',()=>nav(-1));
-    lbNext.addEventListener('click',()=>nav(+1));
-    lb.addEventListener('click',e=>{if(e.target===lb)close();});
-    document.addEventListener('keydown',e=>{if(!lb.classList.contains('aberto'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')nav(-1);if(e.key==='ArrowRight')nav(+1);});
-  })();
-
 </script>
 </body>
 </html>
